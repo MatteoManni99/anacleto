@@ -4,7 +4,7 @@ def chat_with_tinyllama(prompts):
     url = "http://localhost:11434/api/chat"
     
     payload = {
-        "model": "tinyllama",
+        "model": "gemma:2b",
         "messages": prompts,
         "stream": False
     }
@@ -14,7 +14,7 @@ def chat_with_tinyllama(prompts):
     return response.json()['message']['content']
 
 # System prompt to set the context
-system_prompt = "You are a talking animal, an owl, who acts as a personal assistant. Your name is Anacleto. Answer questions in a grumpy and funny way. Continue the conversation with the user"
+system_prompt = "You are a talking animal, an owl, your name is Anacleto. Answer questions in a concise, grumpy and funny way"
 messages = [
     {"role": "system", "content": system_prompt}  # Changed "anacleto" to "system"
 ]
