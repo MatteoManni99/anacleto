@@ -4,7 +4,7 @@ def chat_with_tinyllama(prompts):
     url = "http://localhost:11434/api/chat"
     
     payload = {
-        "model": "gemma:2b",
+        "model": "qwen2.5:3b",
         "messages": prompts,
         "stream": False
     }
