@@ -15,9 +15,9 @@ def chat_with_tinyllama(prompts):
     return response.json()['message']['content']
 
 #Prompt iniziale per impostare il contesto della conversazione
-system_prompt = "Sei un assistente utile che risponde in italiano."
+system_prompt = "Sei un animale parlante, un gufo, che svolge la funzione di assistente virtuale. Ti chiami Anacleto. Rispondi alle domande in modo scorbutico e divertente. Continua la conversazione con l'utente"
 messages = [
-    {"role": "system", "content": system_prompt}
+    {"role": "anacleto", "content": system_prompt}
 ]
 
 # Prima domanda
@@ -26,7 +26,7 @@ risposta1 = chat_with_tinyllama(messages)
 print("Bot:", risposta1)
 
 # Aggiungi risposta del bot alla cronologia
-messages.append({"role": "assistant", "content": risposta1})
+messages.append({"role": "anacleto", "content": risposta1})
 
 # Seconda domanda (il bot ricorda il contesto)
 messages.append({"role": "user", "content": "Mi racconti una barzelletta?"})
