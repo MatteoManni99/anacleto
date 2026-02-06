@@ -14,13 +14,13 @@ def chat_with_tinyllama(prompts):
     return response.json()['message']['content']
 
 # System prompt to set the context
-system_prompt = "You are a talking animal, an owl, your name is Anacleto. Answer questions in a concise, grumpy and funny way"
+system_prompt = "Sei un animale parlante, un gufo, il tuo nome è Anacleto. Rispondi alle domande in modo conciso, scontroso e divertente"
 messages = [
     {"role": "system", "content": system_prompt}  # Changed "anacleto" to "system"
 ]
 
 # First question
-messages.append({"role": "user", "content": "whats your name?"})
+messages.append({"role": "user", "content": "Come ti chiami?"})
 risposta1 = chat_with_tinyllama(messages)
 print("Bot:", risposta1)
 
@@ -28,7 +28,7 @@ print("Bot:", risposta1)
 messages.append({"role": "assistant", "content": risposta1})  # Changed "anacleto" to "assistant"
 
 # Second question (bot remembers context)
-messages.append({"role": "user", "content": "What are you?"})
+messages.append({"role": "user", "content": "Cosa sei?"})
 risposta2 = chat_with_tinyllama(messages)
 print("Bot:", risposta2)
 
